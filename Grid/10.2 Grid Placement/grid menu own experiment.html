@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-Gathering</title>
+    <style>
+        /* Basic reset and placeholder styles - delete these when you start your CSS practice */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 0.2fr 1fr 1fr;
+            height: 100vh;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .middle-center {
+            display: grid;
+            grid-area: 2/2/3/2;
+            background-color: black;
+        }
+
+        a {
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+
+        h1 {
+            color: white;
+            text-align: center;
+            
+        }
+
+        nav > p {
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item top-left"></div>
+        <div class="grid-item top-center"></div>
+        <div class="grid-item top-right"></div>
+
+        <div class="grid-item middle-left"></div>
+        <div class="grid-item middle-center">
+        <div>
+            <h1>Regions</h1>
+            <nav class="menu">
+                <p class="links"><a href="#">Germany</a></p>
+                <p class="links"><a href="#">USA</a></p>
+                <p class="links"><a href="#">All Sources</a></p>
+            </nav>
+        </div>
+        <div class="grid-item middle-right"></div>
+
+        <div class="grid-item bottom-left"></div>
+        <div class="grid-item bottom-center"></div>
+        <div class="grid-item bottom-right"></div>
+    </div>
+</body>
+</html>
