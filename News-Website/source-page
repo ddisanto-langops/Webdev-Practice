@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-Gathering</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 0.1fr 0.5fr;
+            height: 100vh;
+        }
+
+        header {
+            background-color: rgb(194, 208, 219);
+            display: grid;
+            grid-area: 1/1/1/4;
+        }
+
+        .nav-div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            align-items: center;
+        }
+
+        .nav-item {
+            list-style: none;
+            font-size: 1.5rem;
+            display: inline-block;
+            padding: 20px;
+            border-right: 2px solid gray;
+        }
+        
+        a {
+            color: red;
+        }
+
+ 
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <div class="nav-div">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#">Home</a></li>
+                    <li class="nav-item"><a href="#">How this website works</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
