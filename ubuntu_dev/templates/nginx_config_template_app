@@ -1,0 +1,26 @@
+server {
+    # Replace [YOUR_DOMAIN_NAME] with your domain or IP
+    listen 80;
+    server_name [YOUR_DOMAIN_NAME] www.[YOUR_DOMAIN_NAME];
+
+    # Max body size helps prevent large file uploads from crashing the server
+    client_max_body_size 10M;
+
+    # Redirect all HTTP traffic to the Gunicorn socket
+    location / {
+        # The path to the Gunicorn Unix socket
+        include proxy_params;
+        proxy_pass http://unix:/tmp/[APP_NAME].sock;
+    }
+
+    # Location for static files (CSS, JS, images). Nginx serves these directly, 
+    # which is much faster than Python/Gunicorn.
+    # You must configure your Flask app to collect static files into this path.
+    location /static {
+        alias /home/[LINUX_USER_NAME]/[APP_NAME]/static;
+    }
+
+    # Optional: Enable Nginx logging for this specific app (useful for debugging)
+    access_log /var/log/nginx/[APP_NAME]_access.log;
+    error_log /var/log/nginx/[APP_NAME]_error.log;
+}
